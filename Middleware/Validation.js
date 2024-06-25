@@ -2,7 +2,8 @@ const Joi = require("joi")
 
 const signupValidation = (req, res, next) => {
   const schema = Joi.object({
-    name: Joi.string().max(100).required(),
+    firstName: Joi.string().max(100).required(),
+    lastName: Joi.string().max(100),
     email: Joi.string().email().required(),
     password: Joi.string().min(4).max(100).required(),
   })
@@ -31,7 +32,7 @@ const postArticleValidation = (req, res, next) => {
   const schema = Joi.object({
     title: Joi.string().min(5).max(50).required(),
     content: Joi.string().min(5).max(1000).required(),
-    date: Joi.date().required(),
+    date: Joi.date().iso({ format: "YYYY-MM-DD", strict: true }),
   })
 
   const { error } = schema.validate(req.body)

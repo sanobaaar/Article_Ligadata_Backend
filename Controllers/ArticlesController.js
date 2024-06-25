@@ -12,9 +12,9 @@ const postArticle = async (req, res) => {
     }
     const articleModel = new ArticlesModel({ title, content, date })
     await articleModel.save()
-    res.status(201).json({ message: "Article added successfully", success: true })
+    return res.status(201).json({ message: "Article added successfully", success: true })
   } catch (err) {
-    res.status(500).json({ message: "Internal server error", success: false })
+    return res.status(500).json({ message: "Internal server error", success: false })
   }
 }
 
@@ -23,9 +23,9 @@ const getArticles = async (req, res) => {
   try {
     const articles = await ArticlesModel.find()
     if (articles.length === 0) {
-      res.status(404).json({ message: "No articles found!" })
+      return res.status(404).json({ message: "No articles found!" })
     }
-    res.status(200).json(articles)
+    return res.status(200).json(articles)
   } catch (err) {
     return res.status(403).json({ message: "Nothing found!", success: false })
   }
