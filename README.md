@@ -6,6 +6,7 @@ This is a backend API built with Express.js that provides user authentication (l
 
 - [Features](#features)
 - [Technologies](#technologies)
+- [Links](#links)
 - [Installation](#installation)
 - [Environment Variables](#envfile)
 - [API Endpoints](#apiendpoints)
@@ -27,6 +28,11 @@ This is a backend API built with Express.js that provides user authentication (l
 - Mongoose
 - JWT for authentication
 - Jest and Supertest for testing
+
+ ## Links
+- [JIRA](https://sanobarfatima96.atlassian.net/jira/software/projects/KAN/boards/1)
+- [LINKEDIN](https://www.linkedin.com/in/sanobarfatema11/)
+
 
 ## Installation
 
