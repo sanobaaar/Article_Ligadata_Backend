@@ -6,12 +6,10 @@ This is a backend API built with Express.js that provides user authentication (l
 
 - [Features](#features)
 - [Technologies](#technologies)
-- [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
+- [Installation](#Installation)
+- [Environment Variables](#.env file)
+- [API Endpoints](#API Endpoints)
 - [Testing](#testing)
-- [License](#license)
 
 ## Features
 
