@@ -3,6 +3,7 @@ const { signupValidation, loginValidation } = require("../Middleware/Validation"
 
 const router = require("express").Router()
 
+//routes/paths to perform post operations on Users
 router.post("/signup", signupValidation, signup)
 router.post("/login", loginValidation, login)
 

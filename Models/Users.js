@@ -2,6 +2,8 @@ const mongoose = require("mongoose")
 
 const Schema = mongoose.Schema
 
+//User info table
+
 const UserSchema = new Schema({
   firstName: {
     type: String,

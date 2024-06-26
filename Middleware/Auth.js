@@ -1,5 +1,7 @@
 const jwt = require("jsonwebtoken")
 
+
+//ensure authorization is passed to the user
 const ensureAuth = (req, res, next) => {
   const auth = req.headers["authorization"]
   if (!auth) {

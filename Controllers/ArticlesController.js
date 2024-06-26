@@ -1,20 +1,24 @@
 const ArticlesModel = require("../Models/Articles")
-const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
 
-//Create new article
+//Create article
 const postArticle = async (req, res) => {
   try {
-    const { title, content, date } = req.body
+    const { title, content, date, image } = req.body
     const heading = await ArticlesModel.findOne({ title })
     if (heading) {
-      return res.status(409).json({ message: "Title already exists, use another name!", success: false })
+      res.status(409)
+      res.send({ message: "Title already exists, use another name!", success: false })
+      return
     }
-    const articleModel = new ArticlesModel({ title, content, date })
+    const articleModel = new ArticlesModel({ title, content, date, image })
     await articleModel.save()
-    return res.status(201).json({ message: "Article added successfully", success: true })
+    res.status(201)
+    res.send({ message: "Article added successfully", success: true })
+    return
   } catch (err) {
-    return res.status(500).json({ message: "Internal server error", success: false })
+    res.status(500)
+    res.send({ message: "Internal server error", success: false })
+    return
   }
 }
 
@@ -23,11 +27,17 @@ const getArticles = async (req, res) => {
   try {
     const articles = await ArticlesModel.find()
     if (articles.length === 0) {
-      return res.status(404).json({ message: "No articles found!" })
+      res.status(403)
+      res.send({ message: "No articles found!" })
+      return
     }
-    return res.status(200).json(articles)
+    res.status(200)
+    res.send(articles)
+    return
   } catch (err) {
-    return res.status(403).json({ message: "Nothing found!", success: false })
+    res.status(403)
+    res.send({ message: "Nothing found!", success: false })
+    return
   }
 }
 
@@ -37,13 +47,19 @@ const updateArticle = async (req, res) => {
     const id = req.params.id
     const articleExists = await ArticlesModel.findOne({ _id: id })
     if (!articleExists) {
-      return res.status(404).json({ message: "Article not found" })
+      res.status(404)
+      res.send({ message: "Article not found" })
+      return
     }
 
     const updatedArticle = await ArticlesModel.findByIdAndUpdate(id, req.body, { new: true })
-    res.status(201).json(updatedArticle)
+    res.status(201)
+    res.send(updatedArticle)
+    return
   } catch (error) {
-    return res.status(500).json({ message: "Internal server error", success: false })
+    res.status(500)
+    res.send({ message: "Internal server error", success: false })
+    return
   }
 }
 
@@ -53,13 +69,19 @@ const deleteArticle = async (req, res) => {
     const id = req.params.id
     const articleExists = await ArticlesModel.findOne({ _id: id })
     if (!articleExists) {
-      return res.status(404).json({ message: "Article not found" })
+      res.status(404)
+      res.send({ message: "Article not found" })
+      return
     }
 
-    const deleteArticle = await ArticlesModel.findByIdAndDelete(id)
-    res.status(200).json({ message: "Article Deleted", success: true })
+    const deletedArticle = await ArticlesModel.findByIdAndDelete(id)
+    res.status(200)
+    res.send({ message: "Article Deleted", success: true })
+    return
   } catch (err) {
-    return res.status(500).json({ message: "Internal server error", success: false })
+    res.status(500)
+    res.send({ message: "Internal server error", success: false })
+    return
   }
 }
 

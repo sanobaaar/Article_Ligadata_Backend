@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
-
 const Schema = mongoose.Schema
 
+// Structure of the Articles Object
 const ArticlesSchema = new Schema({
   title: {
     type: String,
@@ -15,6 +15,9 @@ const ArticlesSchema = new Schema({
   date: {
     type: Date,
     default: Date.now(),
+  },
+  image: {
+    type: String,
   },
 })
 
