@@ -64,6 +64,7 @@ JWT_KEY="key-123"
 - DELETE /articles/delete/id:  Delete an existing article with help of ID 
 
 ## Testing
+Use Jest and Supertest
 
 npm test
 
