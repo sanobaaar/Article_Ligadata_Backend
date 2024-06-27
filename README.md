@@ -16,6 +16,7 @@ This is a backend API built with Express.js that provides user authentication (l
 ## Features
 
 - User authentication with JWT (login and signup)
+- bcrypt for password hashing(encryption) and decryption
 - CRUD operations for articles
 - MongoDB integration with Mongoose
 - Input validation and error handling
@@ -39,7 +40,7 @@ This is a backend API built with Express.js that provides user authentication (l
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone (https://github.com/sanobaaar/Article_Ligadata_Backend)
    npm install
    npm start
 
