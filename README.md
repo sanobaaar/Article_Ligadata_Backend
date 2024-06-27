@@ -43,13 +43,17 @@ This is a backend API built with Express.js that provides user authentication (l
    git clone https://github.com/sanobaaar/Article_Ligadata_Backend
    npm install
    npm start
+   ```
 
 ## envfile
+```
 PORT=8080;
 
 MONGO_CONN="mongodb+srv://maryamfatima96mf:504602370@cluster0.atpacki.mongodb.net/articles?retryWrites=true&w=majority&appName=Cluster0" 
 
 JWT_KEY="key-123"
+
+```
 
 
 
@@ -66,8 +70,7 @@ JWT_KEY="key-123"
 
 ## Testing
 Use Jest and Supertest
-
-npm test
+```npm test```
 
 ## Contact
 For any questions or suggestions, please contact:
