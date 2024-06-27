@@ -40,7 +40,7 @@ This is a backend API built with Express.js that provides user authentication (l
 1. Clone the repository:
 
    ```bash
-   git clone (https://github.com/sanobaaar/Article_Ligadata_Backend)
+   git clone [https://github.com/sanobaaar/Article_Ligadata_Backend](https://github.com/sanobaaar/Article_Ligadata_Backend)
    npm install
    npm start
 
